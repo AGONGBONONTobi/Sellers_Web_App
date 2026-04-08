@@ -1,5 +1,10 @@
 import express from 'express';
 import { PrismaClient } from '@prisma/client';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const prisma = new PrismaClient();
@@ -15,13 +20,7 @@ app.post('/api/vendors', async (req, res) => {
     }
 
     const vendor = await prisma.vendor.create({
-      data: {
-        businessName,
-        whatsapp,
-        location,
-        category,
-        exported: exported === 'yes',
-      },
+      data: { businessName, whatsapp, location, category, exported: exported === 'yes' },
     });
 
     res.status(201).json(vendor);
@@ -31,6 +30,11 @@ app.post('/api/vendors', async (req, res) => {
   }
 });
 
-app.listen(3001, () => {
-  console.log('API running on http://localhost:3001');
+// Sert le frontend buildé
+app.use(express.static(path.join(__dirname, 'dist')));
+app.get('*', (_req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
+
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
