@@ -7,62 +7,61 @@ interface FeaturesProps {
 
 const Features: React.FC<FeaturesProps> = ({ lang }) => {
   const t = {
-    fr: {
-      title: "Pourquoi Vendre avec ",
-      span: "TrustLink ?",
-      subtitle: "Un système conçu pour que vous vendiez plus, sans risque et sans tracas , du stock à l'encaissement.",
-      cards: [
-        {
-          icon: <BarChart3 className="text-blue-600" size={32} />,
-          t: "Paiement Naira Garanti",
-          d: "Vos fonds sont sécurisés en séquestre dès la commande. Vous êtes payé en Naira dès que nos agents collectent vos marchandises , zéro risque de change, zéro impayé."
-        },
-        {
-          icon: <ShieldCheck className="text-blue-600" size={32} />,
-          t: "Protection Vendeur Intégrée",
-          d: "Chaque commande est documentée avec une preuve vidéo/photo avant expédition. En cas de litige, votre conformité est votre bouclier , vous n'êtes responsable que si l'écart est prouvé."
-        },
-        {
-          icon: <Truck className="text-blue-600" size={32} />,
-          t: "Zéro Logistique pour Vous",
-          d: "Collecte gratuite dans votre boutique à Lagos, douane, transport et livraison finale au Bénin , tout est géré par TrustLink. Vous restez concentré sur votre stock."
-        },
-        {
-          icon: <Globe className="text-blue-600" size={32} />,
-          t: "Un Nouveau Marché de Millions d'Acheteurs",
-          d: "Accédez à des distributeurs et acheteurs béninois qui n'ont aucun moyen de vous trouver sans TrustLink. Commandes groupées, clients récurrents, sans quitter Lagos."
-        }
-      ]
-    },
-    en: {
-      title: "Why Sell with ",
-      span: "TrustLink?",
-      subtitle: "A system built so you sell more, with zero risk and zero hassle , from inventory to payout.",
-      cards: [
-        {
-          icon: <BarChart3 className="text-blue-600" size={32} />,
-          t: "Guaranteed Naira Payout",
-          d: "Your funds are held in escrow from the moment an order is placed. You get paid in Naira as soon as our agents pick up your goods , no currency risk, no bad debt."
-        },
-        {
-          icon: <ShieldCheck className="text-blue-600" size={32} />,
-          t: "Built-in Vendor Protection",
-          d: "Every order is documented with photo/video proof before shipping. In case of a dispute, your compliance is your shield , you're only liable if a discrepancy is proven."
-        },
-        {
-          icon: <Truck className="text-blue-600" size={32} />,
-          t: "Zero Logistics for You",
-          d: "Free pickup from your Lagos shop, customs clearance, transport, and final delivery in Benin , all handled by TrustLink. You stay focused on your inventory."
-        },
-        {
-          icon: <Globe className="text-blue-600" size={32} />,
-          t: "A New Market of Millions of Buyers",
-          d: "Reach Beninese distributors and buyers who have no way to find you without TrustLink. Bulk orders, repeat customers , all without leaving Lagos."
-        }
-      ]
-    }
-  }[lang];
-
+  fr: {
+    title: "Pourquoi Vendre avec ",
+    span: "TrustLink ?",
+    subtitle: "Une infrastructure pensée pour vous connecter à un marché que vous ne pouviez pas atteindre seul.",
+    cards: [
+      {
+        icon: <Globe className="text-blue-600" size={32} />,
+        t: "Un Nouveau Marché à Portée",
+        d: "Le marché béninois est inaccessible sans réseau privé. TrustLink vous y connecte directement , des acheteurs qui cherchent vos produits sans pouvoir vous trouver."
+      },
+      {
+        icon: <ShieldCheck className="text-blue-600" size={32} />,
+        t: "Paiement via Séquestre",
+        d: "Vos fonds sont sécurisés dès la commande. Le paiement est libéré une fois que le client confirme la réception et sa satisfaction , un système transparent pour les deux parties."
+      },
+      {
+        icon: <BarChart3 className="text-blue-600" size={32} />,
+        t: "Protection Vendeur Documentée",
+        d: "Chaque commande est documentée avec une preuve photo/vidéo avant expédition. En cas de litige, votre conformité est vérifiable , vous n'êtes responsable que si l'écart est prouvé."
+      },
+      {
+        icon: <Truck className="text-blue-600" size={32} />,
+        t: "Logistique Transfrontalière Gérée",
+        d: "Douane, transport et livraison finale au Bénin sont coordonnés par TrustLink. Vous vous concentrez sur votre stock, nous gérons le reste."
+      }
+    ]
+  },
+  en: {
+    title: "Why Sell with ",
+    span: "TrustLink?",
+    subtitle: "An infrastructure built to connect you to a market you couldn't reach on your own.",
+    cards: [
+      {
+        icon: <Globe className="text-blue-600" size={32} />,
+        t: "A New Market Within Reach",
+        d: "The Beninese market is locked behind private networks. TrustLink connects you directly , buyers who are looking for your products but have no way to find you."
+      },
+      {
+        icon: <ShieldCheck className="text-blue-600" size={32} />,
+        t: "Escrow-Based Payment",
+        d: "Your funds are secured from the moment an order is placed. Payment is released once the customer confirms receipt and satisfaction , a transparent system for both sides."
+      },
+      {
+        icon: <BarChart3 className="text-blue-600" size={32} />,
+        t: "Documented Vendor Protection",
+        d: "Every order is documented with photo/video proof before shipping. In case of a dispute, your compliance is verifiable , you're only liable if a discrepancy is proven."
+      },
+      {
+        icon: <Truck className="text-blue-600" size={32} />,
+        t: "Cross-Border Logistics Handled",
+        d: "Customs, transport, and final delivery in Benin are coordinated by TrustLink. You focus on your inventory, we handle the rest."
+      }
+    ]
+  }
+}[lang];
   return (
     <section id="features" className="py-24 bg-slate-50">
       <div className="container mx-auto px-6">

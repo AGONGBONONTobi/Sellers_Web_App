@@ -10,21 +10,20 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ isScrolled, lang, setLang }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
   const t = {
-    fr: { 
-      how: "Processus Vendeur", 
-      features: "Avantages Export", 
-      blog: "Intelligence Marché", 
-      join: "Devenir Vendeur" 
-    },
-    en: { 
-      how: "Vendor Process", 
-      features: "Export Benefits", 
-      blog: "Market Intelligence", 
-      join: "Become a Vendor" 
-    }
-  }[lang];
+  fr: { 
+    how: "Processus Vendeur", 
+    features: "Avantages Export", 
+    blog: "Blog", 
+    join: "Devenir Vendeur" 
+  },
+  en: { 
+    how: "Vendor Process", 
+    features: "Export Benefits", 
+    blog: "Blog", 
+    join: "Become a Vendor" 
+  }
+}[lang];
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || isMenuOpen ? 'bg-white/95 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'}`}>
