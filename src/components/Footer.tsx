@@ -11,7 +11,7 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
 
   const t = {
     fr: {
-      desc: "L'infrastructure d'exportation de confiance reliant les grossistes nigérians au marché béninois.",
+      desc: "L'infrastructure d'exportation de confiance reliant les vendeurs nigérians au marché béninois.",
       office_lagos: "Bureau Lagos : Ikeja",
       office_cotonou: "Bureau Cotonou : Ganhi",
       links: "Liens Rapides",
@@ -20,7 +20,7 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
       refundPolicy: "Politique de Retour et Remboursement"
     },
     en: {
-      desc: "The trusted export infrastructure connecting Nigerian wholesalers to the Beninese market.",
+      desc: "The trusted export infrastructure connecting Nigerian sellers to the Beninese market.",
       office_lagos: "Lagos Office: Ikeja",
       office_cotonou: "Cotonou Office: Ganhi",
       links: "Quick Links",
