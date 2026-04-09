@@ -9,6 +9,9 @@ const VendorForm: React.FC<VendorFormProps> = ({ lang }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
+  // Lien communautaire WhatsApp pour redirection
+  const whatsappCommunityLink = "https://chat.whatsapp.com/HSI5gcoVRAiLJSLSU9QXn6?mode=gi_t";
+
   const t = {
     fr: {
       badge: "INFRASTRUCTURE D'EXPORTATION : NIGERIA → BÉNIN",
@@ -32,6 +35,7 @@ const VendorForm: React.FC<VendorFormProps> = ({ lang }) => {
       btn: "REJOINDRE LA LISTE D'ATTENTE",
       success_t: "Demande Reçue !",
       success_d: "Un agent TrustLink vous contactera sur WhatsApp sous 24h pour la prochaine étape.",
+      redirect_text: "Redirection vers la communauté WhatsApp...",
       disclaimer: "En rejoignant, vous acceptez de fournir des produits authentiques et conformes aux commandes. TrustLink vérifie chaque vendeur avant certification."
     },
     en: {
@@ -56,6 +60,7 @@ const VendorForm: React.FC<VendorFormProps> = ({ lang }) => {
       btn: "JOIN VENDOR WAITLIST",
       success_t: "Application Received!",
       success_d: "A TrustLink agent will contact you on WhatsApp within 24 hours for the next step.",
+      redirect_text: "Redirecting to WhatsApp community...",
       disclaimer: "By joining, you agree to supply genuine products that match order specifications. TrustLink verifies every vendor before certification."
     }
   }[lang];
@@ -83,14 +88,18 @@ const VendorForm: React.FC<VendorFormProps> = ({ lang }) => {
       
       if (response.ok) {
         setIsSuccess(true);
+        // Redirection vers WhatsApp après 2 secondes
+        setTimeout(() => {
+          window.open(whatsappCommunityLink, '_blank');
+        }, 2000);
       } else {
         const error = await response.json();
         alert(error.error || 'Erreur lors de l\'envoi');
+        setIsSubmitting(false);
       }
     } catch (error) {
       console.error('Fetch error:', error);
       alert('Erreur réseau. Veuillez réessayer.');
-    } finally {
       setIsSubmitting(false);
     }
   };
@@ -152,13 +161,10 @@ const VendorForm: React.FC<VendorFormProps> = ({ lang }) => {
                     <CheckCircle2 size={40} />
                   </div>
                   <h2 className="text-2xl font-bold mb-2">{t.success_t}</h2>
-                  <p className="text-slate-500 mb-8">{t.success_d}</p>
-                  <button 
-                    onClick={() => setIsSuccess(false)}
-                    className="text-blue-600 font-bold hover:underline"
-                  >
-                    {lang === 'fr' ? "Soumettre une autre entreprise" : "Submit another business"}
-                  </button>
+                  <p className="text-slate-500 mb-4">{t.success_d}</p>
+                  <p className="text-sm text-blue-600 animate-pulse">
+                    {t.redirect_text}
+                  </p>
                 </div>
               ) : (
                 <>
@@ -205,7 +211,6 @@ const VendorForm: React.FC<VendorFormProps> = ({ lang }) => {
                       />
                     </div>
 
-                    {/* Champ "Que vendez-vous ?" - maintenant un champ texte libre */}
                     <div>
                       <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">{t.label_cat}</label>
                       <input
