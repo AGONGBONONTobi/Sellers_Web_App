@@ -13,8 +13,8 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ lang }) => {
     steps: [
       {
         icon: <Search className="text-blue-600" size={32} />,
-        title: "Enregistrement & Vérification",
-        desc: "Inscrivez votre boutique. Nos agents effectuent une vérification physique pour certifier vos produits."
+        title: "Enregistrement",
+        desc: "Inscrivez votre boutique sur la plateforme et commencez à lister vos produits."
       },
       {
         icon: <Wallet className="text-blue-600" size={32} />,
@@ -24,7 +24,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ lang }) => {
       {
         icon: <ClipboardCheck className="text-blue-600" size={32} />,
         title: "Vérification des Produits",
-        desc: "Nos agents inspectent et confirment la conformité de vos produits avec la commande avant expédition."
+        desc: "En tant que vendeur, vous vérifiez vous-même la conformité des produits avant l'expédition."
       },
       {
         icon: <Truck className="text-blue-600" size={32} />,
@@ -44,8 +44,8 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ lang }) => {
     steps: [
       {
         icon: <Search className="text-blue-600" size={32} />,
-        title: "Registration & Verification",
-        desc: "Register your shop. Our agents perform a physical check to certify your products."
+        title: "Registration",
+        desc: "Register your shop on the platform and start listing your products."
       },
       {
         icon: <Wallet className="text-blue-600" size={32} />,
@@ -55,7 +55,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ lang }) => {
       {
         icon: <ClipboardCheck className="text-blue-600" size={32} />,
         title: "Product Verification",
-        desc: "Our agents inspect and confirm your products match the order before shipping."
+        desc: "As a seller, you verify the product compliance yourself before shipping."
       },
       {
         icon: <Truck className="text-blue-600" size={32} />,

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, Zap, Building2, ShieldCheck, Globe, Truck } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ShieldCheck, Truck, Globe } from 'lucide-react';
 
 interface VendorFormProps {
   lang: 'fr' | 'en';
@@ -8,54 +8,58 @@ interface VendorFormProps {
 const VendorForm: React.FC<VendorFormProps> = ({ lang }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-const t = {
-  fr: {
-    badge: "INFRASTRUCTURE D'EXPORTATION : NIGERIA → BÉNIN",
-    title: "Vendez au Bénin. ",
-    span: "Augmentez votre clientèle.",
-    desc: "TrustLink connecte les vendeurs nigérians au marché béninois , sans réseau privé, sans barrière logistique. Vous êtes payé une fois la commande confirmée et le client satisfait, via notre système de séquestre sécurisé.",
-    benefit1_t: "Paiement via Séquestre",
-    benefit1_d: "Vos fonds sont sécurisés dès la commande. Le paiement est libéré une fois que le client confirme la réception et sa satisfaction , un système transparent pour les deux parties.",
-    benefit2_t: "Logistique Transfrontalière Gérée",
-    benefit2_d: "Douane, transport et livraison finale au Bénin sont coordonnés par TrustLink. Vous vous concentrez sur votre stock, nous gérons le reste.",
-    benefit3_t: "Un Marché accessible Avec Nous",
-    benefit3_d: "Le marché béninois est verrouillé derrière des réseaux privés. TrustLink vous y connecte directement , des acheteurs à Cotonou et Porto-Novo qui cherchent vos produits sans pouvoir vous trouver.",
-    form_title: "Devenez un Vendeur Certifié",
-    form_subtitle: "Rejoignez TrustLink et accédez au marché béninois. Nous vérifions chaque vendeur avant activation pour garantir la confiance des acheteurs.",
-    label_biz: "Nom de l'entreprise / Boutique",
-    label_whatsapp: "Numéro WhatsApp",
-    label_location: "Emplacement au Nigeria",
-    label_cat: "Que vendez-vous ?",
-    label_exported: "Avez-vous déjà vendu au Bénin ?",
-    btn: "REJOINDRE LA LISTE D'ATTENTE",
-    success_t: "Demande Reçue !",
-    success_d: "Un agent TrustLink vous contactera sur WhatsApp sous 24h pour la prochaine étape.",
-    disclaimer: "En rejoignant, vous acceptez de fournir des produits authentiques et conformes aux commandes. TrustLink vérifie chaque vendeur avant certification."
-  },
-  en: {
-    badge: "EXPORT INFRASTRUCTURE: NIGERIA → BENIN",
-    title: "Sell to Benin. ",
-    span: "Grow your customer base.",
-    desc: "TrustLink connects Nigerian sellers to the Beninese market , no private network, no logistical barriers. You get paid once the order is confirmed and the customer is satisfied, through our secure escrow system.",
-    benefit1_t: "Escrow-Based Payment",
-    benefit1_d: "Your funds are secured from the moment an order is placed. Payment is released once the customer confirms receipt and satisfaction , a transparent system for both sides.",
-    benefit2_t: "Cross-Border Logistics Handled",
-    benefit2_d: "Customs, transport, and final delivery in Benin are coordinated by TrustLink. You focus on your inventory, we handle the rest.",
-    benefit3_t: "An Accessible Market With Us",
-    benefit3_d: "The Beninese market is locked behind private networks. TrustLink connects you directly , buyers in Cotonou and Porto-Novo who are looking for your products but have no way to find you.",
-    form_title: "Become a Verified Vendor",
-    form_subtitle: "Join TrustLink and access the Beninese market. We verify every vendor before activation to guarantee buyer trust.",
-    label_biz: "Business / Shop Name",
-    label_whatsapp: "WhatsApp Number",
-    label_location: "Location in Nigeria",
-    label_cat: "What do you sell?",
-    label_exported: "Have you sold to Benin Republic before?",
-    btn: "JOIN VENDOR WAITLIST",
-    success_t: "Application Received!",
-    success_d: "A TrustLink agent will contact you on WhatsApp within 24 hours for the next step.",
-    disclaimer: "By joining, you agree to supply genuine products that match order specifications. TrustLink verifies every vendor before certification."
-  }
-}[lang];
+
+  const t = {
+    fr: {
+      badge: "INFRASTRUCTURE D'EXPORTATION : NIGERIA → BÉNIN",
+      title: "Vendez au Bénin. ",
+      span: "Augmentez votre clientèle.",
+      desc: "TrustLink connecte les vendeurs nigérians au marché béninois , sans réseau privé, sans barrière logistique. Vous êtes payé une fois la commande confirmée et le client satisfait, via notre système de séquestre sécurisé.",
+      benefit1_t: "Paiement via Séquestre",
+      benefit1_d: "Vos fonds sont sécurisés dès la commande. Le paiement est libéré une fois que le client confirme la réception et sa satisfaction , un système transparent pour les deux parties.",
+      benefit2_t: "Logistique Transfrontalière Gérée",
+      benefit2_d: "Douane, transport et livraison finale au Bénin sont coordonnés par TrustLink. Vous vous concentrez sur votre stock, nous gérons le reste.",
+      benefit3_t: "Un Marché accessible Avec Nous",
+      benefit3_d: "Le marché béninois est verrouillé derrière des réseaux privés. TrustLink vous y connecte directement , des acheteurs à Cotonou et Porto-Novo qui cherchent vos produits sans pouvoir vous trouver.",
+      form_title: "Devenez un Vendeur Certifié",
+      form_subtitle: "Rejoignez TrustLink et accédez au marché béninois. Nous vérifions chaque vendeur avant activation pour garantir la confiance des acheteurs.",
+      label_biz: "Nom de l'entreprise / Boutique",
+      label_whatsapp: "Numéro WhatsApp",
+      label_location: "Emplacement au Nigeria",
+      label_cat: "Que vendez-vous ?",
+      label_exported: "Avez-vous déjà vendu au Bénin ?",
+      placeholder_cat: "Ex: Vêtements, électronique, pièces auto, cosmétiques...",
+      btn: "REJOINDRE LA LISTE D'ATTENTE",
+      success_t: "Demande Reçue !",
+      success_d: "Un agent TrustLink vous contactera sur WhatsApp sous 24h pour la prochaine étape.",
+      disclaimer: "En rejoignant, vous acceptez de fournir des produits authentiques et conformes aux commandes. TrustLink vérifie chaque vendeur avant certification."
+    },
+    en: {
+      badge: "EXPORT INFRASTRUCTURE: NIGERIA → BENIN",
+      title: "Sell to Benin. ",
+      span: "Grow your customer base.",
+      desc: "TrustLink connects Nigerian sellers to the Beninese market , no private network, no logistical barriers. You get paid once the order is confirmed and the customer is satisfied, through our secure escrow system.",
+      benefit1_t: "Escrow-Based Payment",
+      benefit1_d: "Your funds are secured from the moment an order is placed. Payment is released once the customer confirms receipt and satisfaction , a transparent system for both sides.",
+      benefit2_t: "Cross-Border Logistics Handled",
+      benefit2_d: "Customs, transport, and final delivery in Benin are coordinated by TrustLink. You focus on your inventory, we handle the rest.",
+      benefit3_t: "An Accessible Market With Us",
+      benefit3_d: "The Beninese market is locked behind private networks. TrustLink connects you directly , buyers in Cotonou and Porto-Novo who are looking for your products but have no way to find you.",
+      form_title: "Become a Verified Vendor",
+      form_subtitle: "Join TrustLink and access the Beninese market. We verify every vendor before activation to guarantee buyer trust.",
+      label_biz: "Business / Shop Name",
+      label_whatsapp: "WhatsApp Number",
+      label_location: "Location in Nigeria",
+      label_cat: "What do you sell?",
+      label_exported: "Have you sold to Benin Republic before?",
+      placeholder_cat: "e.g. Clothing, electronics, auto parts, cosmetics...",
+      btn: "JOIN VENDOR WAITLIST",
+      success_t: "Application Received!",
+      success_d: "A TrustLink agent will contact you on WhatsApp within 24 hours for the next step.",
+      disclaimer: "By joining, you agree to supply genuine products that match order specifications. TrustLink verifies every vendor before certification."
+    }
+  }[lang];
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -65,8 +69,8 @@ const t = {
     const formData = {
       businessName: (form.elements.namedItem('businessName') as HTMLInputElement)?.value,
       whatsapp: (form.elements.namedItem('whatsapp') as HTMLInputElement)?.value,
-      location: (form.elements.namedItem('location') as HTMLSelectElement)?.value,
-      category: (form.elements.namedItem('category') as HTMLSelectElement)?.value,
+      location: (form.elements.namedItem('location') as HTMLInputElement)?.value,
+      category: (form.elements.namedItem('category') as HTMLInputElement)?.value,
       exported: (form.elements.namedItem('exported') as HTMLInputElement)?.value,
     };
     
@@ -84,7 +88,7 @@ const t = {
         alert(error.error || 'Erreur lors de l\'envoi');
       }
     } catch (error) {
-       console.error('Fetch error:', error); // <-- Ajoutez ceci pour voir l'erreur dans la console
+      console.error('Fetch error:', error);
       alert('Erreur réseau. Veuillez réessayer.');
     } finally {
       setIsSubmitting(false);
@@ -190,29 +194,27 @@ const t = {
                       </div>
                     </div>
 
-                   <div>
-                    <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">{t.label_location}</label>
-                    <input
-                      name="location"
-                      required
-                      type="text"
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                      placeholder={lang === 'fr' ? "Ex: Balogun Market, Lagos" : "e.g. Balogun Market, Lagos"}
-                    />
-                  </div>
+                    <div>
+                      <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">{t.label_location}</label>
+                      <input
+                        name="location"
+                        required
+                        type="text"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                        placeholder={lang === 'fr' ? "Ex: Balogun Market, Lagos" : "e.g. Balogun Market, Lagos"}
+                      />
+                    </div>
 
+                    {/* Champ "Que vendez-vous ?" - maintenant un champ texte libre */}
                     <div>
                       <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">{t.label_cat}</label>
-                      <select 
+                      <input
                         name="category"
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all cursor-pointer"
-                      >
-                        <option value="Fashion & Textiles">Fashion & Textiles</option>
-                        <option value="Electronics & Gadgets">Electronics & Gadgets</option>
-                        <option value="Beauty & Cosmetics">Beauty & Cosmetics</option>
-                        <option value="Auto Parts">Auto Parts</option>
-                        <option value="Home Goods">Home Goods</option>
-                      </select>
+                        required
+                        type="text"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                        placeholder={t.placeholder_cat}
+                      />
                     </div>
 
                     <div>
