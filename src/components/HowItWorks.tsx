@@ -33,9 +33,8 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ lang }) => {
       },
       {
         icon: <CheckCircle2 className="text-blue-600" size={32} />,
-        title: "Paiement après Confirmation",
-        desc: "Une fois le client satisfait et la réception confirmée, votre paiement est libéré via le séquestre."
-      }
+        title: "Paiement Garanti via Séquestre",
+desc: "Dès qu'une commande est passée, les fonds de l'acheteur sont sécurisés dans notre système de séquestre. Votre paiement est protégé et garanti avant même que vous expédiiez quoi que ce soit."}
     ]
   },
   en: {
@@ -64,8 +63,8 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ lang }) => {
       },
       {
         icon: <CheckCircle2 className="text-blue-600" size={32} />,
-        title: "Payment after Confirmation",
-        desc: "Once the customer confirms receipt and satisfaction, your payment is released via escrow."
+        title: "Guaranteed Payment via Escrow",
+        desc: "As soon as an order is placed, the buyer's funds are secured in our escrow system. Your payment is protected and guaranteed before you even ship anything."
       }
     ]
   }
