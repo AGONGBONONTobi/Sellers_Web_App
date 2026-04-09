@@ -190,20 +190,16 @@ const t = {
                       </div>
                     </div>
 
-                    <div>
-                      <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">{t.label_location}</label>
-                      <select 
-                        name="location"
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all cursor-pointer"
-                      >
-                        <option value="Balogun Market (Lagos)">Balogun Market (Lagos)</option>
-                        <option value="Alaba International (Lagos)">Alaba International (Lagos)</option>
-                        <option value="Trade Fair (Lagos)">Trade Fair (Lagos)</option>
-                        <option value="Onitsha Main Market">Onitsha Main Market</option>
-                        <option value="Kano Market">Kano Market</option>
-                        <option value="Other / Private Warehouse">Other / Private Warehouse</option>
-                      </select>
-                    </div>
+                   <div>
+                    <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">{t.label_location}</label>
+                    <input
+                      name="location"
+                      required
+                      type="text"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                      placeholder={lang === 'fr' ? "Ex: Balogun Market, Lagos" : "e.g. Balogun Market, Lagos"}
+                    />
+                  </div>
 
                     <div>
                       <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">{t.label_cat}</label>
