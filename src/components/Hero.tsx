@@ -9,18 +9,18 @@ const Hero: React.FC<HeroProps> = ({ lang }) => {
   const t = {
   fr: {
     badge: "INFRASTRUCTURE D'EXPORTATION : NIGERIA → BÉNIN",
-    h1: "Vendez au Bénin. ",
-    h1Span: "Augmentez votre clientèle.",
-    p: "TrustLink connecte les vendeurs nigérians au marché béninois , sans réseau privé, sans barrière logistique. Vous êtes payé une fois la commande confirmée et le client satisfait, via notre système de séquestre sécurisé.",
-    cta: "Commencer à exporter",
+    h1: "Vendez du Nigéria au Bénin en toute simplicité.",
+    h1Span: "Élargissez votre clientèle.",
+    p: "Accédez à des acheteurs potentiels. Développez votre activité à l'international.",
+    cta: "Commencez à vendre",
     users: "+500 vendeurs nigérians déjà certifiés"
   },
   en: {
     badge: "EXPORT INFRASTRUCTURE: NIGERIA → BENIN",
-    h1: "Sell to Benin. ",
-    h1Span: "Grow your customer base.",
-    p: "TrustLink connects Nigerian sellers to the Beninese market , no private network, no logistical barriers. You get paid once the order is confirmed and the customer is satisfied, through our secure escrow system.",
-    cta: "Start Exporting Now",
+    h1: "Sell from Nigeria to Benin — Seamlessly. ",
+    h1Span: "Expand your reach.",
+    p: "Access ready buyers. Grow your business across borders.",
+    cta: "Start Selling Now",
     users: "+500 Nigerian sellers already certified"
   }
 }[lang];
