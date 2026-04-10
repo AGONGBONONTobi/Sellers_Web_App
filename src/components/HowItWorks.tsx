@@ -34,7 +34,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ lang }) => {
       {
         icon: <CheckCircle2 className="text-blue-600" size={32} />,
         title: "Paiement Garanti via Séquestre",
-desc: "Dès qu'une commande est passée, les fonds de l'acheteur sont sécurisés dans notre système de séquestre. Votre paiement est protégé et garanti avant même que vous expédiiez quoi que ce soit."}
+desc: "Votre paiement est protégé et garanti avant même que vous expédiiez quoi que ce soit."}
     ]
   },
   en: {
@@ -64,7 +64,7 @@ desc: "Dès qu'une commande est passée, les fonds de l'acheteur sont sécurisé
       {
         icon: <CheckCircle2 className="text-blue-600" size={32} />,
         title: "Guaranteed Payment via Escrow",
-        desc: "As soon as an order is placed, the buyer's funds are secured in our escrow system. Your payment is protected and guaranteed before you even ship anything."
+        desc: "Your payment is protected and guaranteed before you even ship anything."
       }
     ]
   }
