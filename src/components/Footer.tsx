@@ -4,19 +4,22 @@ import logo from "./trustlink_logo.png"
 
 interface FooterProps {
   lang: 'fr' | 'en';
+  activeTab: 'seller' | 'buyer';
 }
 
-const Footer: React.FC<FooterProps> = ({ lang }) => {
+const Footer: React.FC<FooterProps> = ({ lang, activeTab }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Lien communautaire WhatsApp
-  const whatsappCommunityLink = "https://chat.whatsapp.com/HSI5gcoVRAiLJSLSU9QXn6?mode=gi_t";
-  
+  // Liens communautaires WhatsApp selon le profil
+  const whatsappSellerLink = "https://chat.whatsapp.com/CrUikPkQPkpBBSvPHLUzQa?mode=gi_t";
+  const whatsappBuyerLink = "https://chat.whatsapp.com/CrUikPkQPkpBBSvPHLUzQa?mode=gi_t";
+
   // Email de support
   const supportEmail = "trustlink.avat@gmail.com";
 
   const handleWhatsAppClick = () => {
-    window.open(whatsappCommunityLink, '_blank');
+    const link = activeTab === 'seller' ? whatsappSellerLink : whatsappBuyerLink;
+    window.open(link, '_blank');
   };
 
   const handleEmailClick = () => {
@@ -73,7 +76,7 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
                 <li><a href="#how" className="hover:text-blue-500 transition-colors">{lang === 'fr' ? 'Infrastructure' : 'Infrastructure'}</a></li>
                 <li><a href="#features" className="hover:text-blue-500 transition-colors">{lang === 'fr' ? 'Avantages' : 'Benefits'}</a></li>
                 <li><a href="#blog" className="hover:text-blue-500 transition-colors">{lang === 'fr' ? 'Intelligence' : 'Intelligence'}</a></li>
-                <li><a href="#waitlist" className="hover:text-blue-500 transition-colors">{lang === 'fr' ? 'S\'inscrire' : 'Register'}</a></li>
+                <li><a href="#waitlist" className="hover:text-blue-500 transition-colors">{lang === 'fr' ? "S'inscrire" : 'Register'}</a></li>
               </ul>
             </div>
             
@@ -179,7 +182,7 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
                 <div className="mt-3 bg-amber-50 p-3 rounded-lg">
                   <p className="text-sm text-amber-800">
                     {lang === 'fr'
-                      ? '⚠️ En cas de remboursement, la conversion inverse se fera au taux en vigueur. L\'acheteur accepte que le montant remboursé puisse être inférieur. Exemple : 5 000 FCFA → 4 500 FCFA.'
+                      ? "⚠️ En cas de remboursement, la conversion inverse se fera au taux en vigueur. L'acheteur accepte que le montant remboursé puisse être inférieur. Exemple : 5 000 FCFA → 4 500 FCFA."
                       : '⚠️ In case of refund, reverse conversion applies at current rate. Buyer accepts that refunded amount may be lower. Example: 5,000 FCFA → 4,500 FCFA.'}
                   </p>
                 </div>
@@ -196,7 +199,7 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
               <div className="bg-red-50 p-4 rounded-xl">
                 <h3 className="font-bold text-red-800 text-sm mb-2">{lang === 'fr' ? 'Exclusions' : 'Exclusions'}</h3>
                 <ul className="text-xs text-red-700 space-y-1 list-disc list-inside">
-                  <li>{lang === 'fr' ? 'Absence de vidéo d\'unboxing' : 'No unboxing video'}</li>
+                  <li>{lang === 'fr' ? "Absence de vidéo d'unboxing" : 'No unboxing video'}</li>
                   <li>{lang === 'fr' ? 'Délai de 48h dépassé' : '48h deadline exceeded'}</li>
                 </ul>
               </div>
