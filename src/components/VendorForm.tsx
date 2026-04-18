@@ -10,7 +10,7 @@ const VendorForm: React.FC<VendorFormProps> = ({ lang }) => {
   const [isSuccess, setIsSuccess] = useState(false);
 
   // Lien communautaire WhatsApp pour redirection
-  const whatsappCommunityLink = "https://chat.whatsapp.com/HSI5gcoVRAiLJSLSU9QXn6?mode=gi_t";
+  const whatsappCommunityLink = "https://chat.whatsapp.com/CrUikPkQPkpBBSvPHLUzQa?mode=gi_t";
 
   const t = {
     fr: {
